@@ -1,0 +1,23 @@
+	 /**
+	 * @author Domingo Martinez Diaz
+	 * Crear un proyecto “Quiz” que sea una aplicación que implemente un juego con preguntas cortas.
+	 * 
+	 */
+
+package unidad6.practica.quiz;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+
+		Juego.iniciarJugadores();
+		Juego.iniciarPreguntas();
+		
+		System.out.println(Juego.seleccionarJugador());
+		
+		
+	}
+	
+
+}

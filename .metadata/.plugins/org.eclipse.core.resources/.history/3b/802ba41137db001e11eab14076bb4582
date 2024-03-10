@@ -1,0 +1,47 @@
+package unidad6.practica.quiz;
+
+import java.util.ArrayList;
+
+public class Juego {
+
+	private static ArrayList<Jugador> listajugadores = new ArrayList<>();
+
+	private static ArrayList<Pregunta> listapreguntas = new ArrayList<>();
+
+	public static void iniciarJugadores() {
+
+		Jugador player1 = new Jugador ("Domingo",25,0);
+		listajugadores.add(player1);
+		Jugador player2 = new Jugador ("Roberto",23,0);
+		listajugadores.add(player2);
+		Jugador player3 = new Jugador ("Natalia",29,5);
+		listajugadores.add(player3);
+		
+	}
+	
+	public static void iniciarPreguntas() {
+		
+		Pregunta pregunta1 = new Pregunta (01,"Cual es la capital de Spain?","Madrid","Barcelona","Murcia",true,false,false);
+		listapreguntas.add(pregunta1);
+		Pregunta pregunta2 = new Pregunta (02,"Cual es mi color favorito?","Amarillo","Rojo","Azul",true,false,false);
+		listapreguntas.add(pregunta2);
+		Pregunta pregunta3 = new Pregunta (03,"Cual es una verdura Murciana","Platano","Limon","Mango",false,true,false);
+		listapreguntas.add(pregunta3);
+		Pregunta pregunta4 = new Pregunta (04,"Cual es la capital de Spain?","Madrid","Barcelona","Murcia",true,false,false);
+		listapreguntas.add(pregunta4);
+		Pregunta pregunta5 = new Pregunta (05,"Cual es la capital de Spain?","Madrid","Barcelona","Murcia",true,false,false);
+		listapreguntas.add(pregunta5);
+		Pregunta pregunta6 = new Pregunta (06,"Cual es la capital de Spain?","Madrid","Barcelona","Murcia",true,false,false);
+		listapreguntas.add(pregunta6);
+		Pregunta pregunta7 = new Pregunta (07,"Cual es la capital de Spain?","Madrid","Barcelona","Murcia",true,false,false);
+		listapreguntas.add(pregunta7);
+		Pregunta pregunta8 = new Pregunta (08,"Cual es la capital de Spain?","Madrid","Barcelona","Murcia",true,false,false);
+		listapreguntas.add(pregunta8);
+		Pregunta pregunta9 = new Pregunta (09,"Cual es la capital de Spain?","Madrid","Barcelona","Murcia",true,false,false);
+		listapreguntas.add(pregunta9);
+		Pregunta pregunta10 = new Pregunta (10,"Cual es la capital de Spain?","Madrid","Barcelona","Murcia",true,false,false);
+		listapreguntas.add(pregunta10);
+		
+	}
+
+}

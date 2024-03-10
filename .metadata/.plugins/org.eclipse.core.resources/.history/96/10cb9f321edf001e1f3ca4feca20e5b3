@@ -1,0 +1,50 @@
+package unidad6.tareas.tarea2_V2;
+
+public class Cocinero {
+	
+	private String nombre;
+	private int num_estrellas;
+	private String restaurante;
+	
+	
+	
+	
+	
+	
+	public Cocinero() {
+		
+	}
+	public Cocinero(String nombre, int num_estrellas, String restaurante) {
+		
+		this.nombre = nombre;
+		this.num_estrellas = num_estrellas;
+		this.restaurante = restaurante;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public int getNum_estrellas() {
+		return num_estrellas;
+	}
+	public void setNum_estrellas(int num_estrellas) {
+		this.num_estrellas = num_estrellas;
+	}
+	public String getRestaurante() {
+		return restaurante;
+	}
+	public void setRestaurante(String restaurante) {
+		this.restaurante = restaurante;
+	}
+	
+	@Override
+	public String toString() {
+		return "Cocinero [nombre=" + nombre + ", num_estrellas=" + num_estrellas + ", restaurante=" + restaurante + "]";
+	}
+	
+	
+	
+	
+}

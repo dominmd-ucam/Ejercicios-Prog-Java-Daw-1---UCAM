@@ -1,0 +1,10 @@
+package unidad6.tareas.tarea2_V2;
+
+public class Cocinero {
+	
+	private String nombre;
+	private int num_estrellas;
+	private String restaurante;
+	
+
+}

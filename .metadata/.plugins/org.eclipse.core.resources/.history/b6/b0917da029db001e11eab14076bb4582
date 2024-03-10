@@ -1,0 +1,17 @@
+package unidad6.practica.quiz;
+
+public class Pregunta {
+
+	private int id;
+	private String pregunta;
+	private String respuesta1;
+	private String respuesta2;
+	private String respuesta3;
+	
+	private boolean respuesta1_correcta;
+	private boolean respuesta2_correcta;
+	private boolean respuesta3_correcta;
+	
+	
+	
+}

@@ -1,0 +1,26 @@
+package unidad6.practica.quiz;
+
+import java.util.ArrayList;
+
+public class Juego {
+
+	private static ArrayList<Jugador> listajugadores = new ArrayList<>();
+
+	private static ArrayList<Pregunta> listapreguntas = new ArrayList<>();
+
+	public static void iniciarJugadores() {
+
+		Jugador player1 = new Jugador ("Domingo",25,0);
+		listajugadores.add(player1);
+		Jugador player2 = new Jugador ("Roberto",23,0);
+		listajugadores.add(player2);
+		Jugador player3 = new Jugador ("Natalia",29,5);
+		listajugadores.add(player3);
+		
+	}
+	
+	public static void iniciarPreguntas() {
+		
+	}
+
+}

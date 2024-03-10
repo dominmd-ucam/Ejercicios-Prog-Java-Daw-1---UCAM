@@ -1,0 +1,226 @@
+package unidad6.tareas.tarea2_V2;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Receta {
+	
+	private String nombre;
+	private String dificultad;
+	private Double tiempo;
+	private String descripcion;
+	
+	private Cocinero chef;
+	
+	private static ArrayList<Receta> listaRecetas = new ArrayList<>();
+	
+	
+	
+	public Receta() {
+		
+		
+	}
+
+	public Receta(String nombre, String dificultad, Double tiempo, String descripcion, Cocinero chef) {
+		
+		this.nombre = nombre;
+		this.dificultad = dificultad;
+		this.tiempo = tiempo;
+		this.descripcion = descripcion;
+		this.chef = chef;
+		
+		
+	}
+	
+	
+	
+	public Cocinero getChef() {
+		return chef;
+	}
+
+	public void setChef(Cocinero chef) {
+		this.chef = chef;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getDificultad() {
+		return dificultad;
+	}
+	public void setDificultad(String dificultad) {
+		this.dificultad = dificultad;
+	}
+	public Double getTiempo() {
+		return tiempo;
+	}
+	public void setTiempo(Double tiempo) {
+		this.tiempo = tiempo;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public ArrayList<Receta> getListaRecetas() {
+		return listaRecetas;
+	}
+
+	public static void setListaRecetas(ArrayList<Receta> listaRecetas) {
+		Receta.listaRecetas = listaRecetas;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "Receta [nombre=" + nombre + ", dificultad=" + dificultad + ", tiempo=" + tiempo + ", descripcion="
+				+ descripcion + "]";
+	}
+
+	public static boolean validarDificultad(String dificultad_insertada) {
+		Scanner sc = new Scanner (System.in);
+		
+		boolean correcto = false;
+		do {
+			switch (dificultad_insertada.toLowerCase()) {
+			case "facil":
+				correcto=true;
+				break;
+				
+			case "media":
+				correcto=true;
+				break;
+				
+			case "dificil":
+				correcto=true;
+				break;
+			default:
+				System.err.print("ERROR. No has seleccionado un tipo de dificultad valida (facil/media/dificil):");
+				dificultad_insertada = sc.nextLine().trim();
+				break;
+			}
+		}while(!correcto);
+		
+		
+		return correcto;
+	}
+	
+	public static Receta crearReceta() {
+		Scanner scString = new Scanner (System.in);
+		
+		String nombreNuevaReceta = "";
+		String descripcionReceta = "";
+		
+		System.out.print("Dime el nombre de la nueva receta:");
+		nombreNuevaReceta = scString.nextLine().trim();
+		
+		System.out.print("Dime una dificultad (facil/media/dificil): ");
+		String dificultadReceta = Principal.pedirDificultad(); //Lo habia hecho con el metodo pedirDificultad() tipo VOID pero al recogerlo aqui en un String no me deja.
+		
+		System.out.println("Indica el tiempo de la receta: ");
+		double tiempoReceta  = Principal.pedirTiempo(); //Lo habia hecho con el metodo pedirDificultad() tipo VOID pero al recogerlo aqui en un String no me deja.
+		
+		System.out.print("Indica una descripcion para esta receta: ");
+		descripcionReceta = scString.nextLine().trim();
+		
+		System.out.println("Quien ha realizado esta receta? Indica el cocinero:");
+		 
+		
+		Receta nuevaReceta = new Receta (nombreNuevaReceta, dificultadReceta, tiempoReceta, descripcionReceta);
+		
+		listaRecetas.add(nuevaReceta);
+		
+		return nuevaReceta;
+	}
+	
+	public static void mostrarRecetas() {
+		System.out.println("Esta es la lista de las recetas"); 
+		for (Receta receta : listaRecetas) {
+			System.out.println(receta.toString());
+		}
+		
+	}
+	
+	public static void recetasDeEjemplo() {
+		
+		Cocinero cocinero1 = new Cocinero ("Jordi",2,"Casa Jordi");
+		Cocinero.getListacocineros().add(cocinero1);
+		Cocinero cocinero2 = new Cocinero ("Pepe",5,"Casa PEPE");
+		Cocinero.getListacocineros().add(cocinero2);
+		Cocinero cocinero3 = new Cocinero ("Joan Roca",10,"Abacos");
+		Cocinero.getListacocineros().add(cocinero3);
+		
+		Receta receta_ejemplo1 = new Receta ("Fabada", "dificil",60.00,"Descripcion receta",cocinero1); //Cuando aqui ponemos 60 al ser double tengo que utilizar el . para poner 60.00 sin embargo en el metodo de recogerTiempo(), si pongo punto y no coma no lo reconoce como bueno....
+		listaRecetas.add(receta_ejemplo1);
+		Receta receta_ejemplo2 = new Receta ("Calamares","media",30.00,"Descripcion receta",cocinero2);
+		listaRecetas.add(receta_ejemplo2);
+		Receta receta_ejemplo3 = new Receta ("Paella","dificil",40.00,"Descripcion receta",cocinero3);
+		listaRecetas.add(receta_ejemplo3);
+		Receta receta_ejemplo4 = new Receta ("Macarrones","facil",20.00,"Descripcion receta",cocinero1);
+		listaRecetas.add(receta_ejemplo4);
+		Receta receta_ejemplo5 = new Receta ("Fajitas","facil",20.00,"Descripcion receta",cocinero2);
+		listaRecetas.add(receta_ejemplo5);
+		
+	}
+	
+	public static void mostrarNombreRecetas() {
+		int i=1;
+		for (Receta receta : listaRecetas) {
+			System.out.println(i+") "+receta.getNombre());
+			i++;
+		}
+	}
+	
+	public static void buscarReceta() {
+		Scanner sc = new Scanner (System.in);
+		
+		String recetaBuscar = "";
+		char respuesta ;
+		boolean encontrado = false;
+		
+		mostrarNombreRecetas();
+		System.out.println("Dime el nombre de la receta que desea buscar:");
+		recetaBuscar = sc.nextLine().trim();
+		
+		for (Receta receta : listaRecetas) {
+			if(receta.getNombre().toLowerCase().equalsIgnoreCase(recetaBuscar)) {
+				System.out.println("Receta encontrada correctamente.");
+				System.out.println(receta.toString());
+				encontrado = true;
+			}
+			
+		}
+		
+		if(!encontrado) {
+			System.out.println("Receta no encontrada.");
+			System.out.println("Desea crearla? Escribe si o no: Y/N");
+			respuesta = sc.next().toUpperCase().trim().charAt(0) ;
+				
+				if(respuesta == 'Y') {
+					crearReceta();
+				}
+		}
+		
+	}
+	
+	public static void mostrarRecetasDificultad(String dificultad) {
+		int i = 1;
+		System.out.println("Todas las recetas de dificultad \""+dificultad+"\" son:");
+		for (Receta receta : listaRecetas) {
+			
+			if(receta.getDificultad().equalsIgnoreCase(dificultad)) {
+				System.out.println(i+") "+receta.getNombre());
+				i++;
+			}
+		}
+		
+		
+	}
+	
+	
+}

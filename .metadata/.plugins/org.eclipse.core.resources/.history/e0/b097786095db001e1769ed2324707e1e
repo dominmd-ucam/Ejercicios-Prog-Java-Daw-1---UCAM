@@ -1,0 +1,94 @@
+package unidad6.practica.quiz;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Juego {
+
+	private static ArrayList<Jugador> listajugadores = new ArrayList<>();
+
+	private static ArrayList<Pregunta> listapreguntas = new ArrayList<>();
+	
+
+	public static ArrayList<Jugador> getListajugadores() {
+		return listajugadores;
+	}
+
+	public static void setListajugadores(ArrayList<Jugador> listajugadores) {
+		Juego.listajugadores = listajugadores;
+	}
+
+	public static ArrayList<Pregunta> getListapreguntas() {
+		return listapreguntas;
+	}
+
+	public static void setListapreguntas(ArrayList<Pregunta> listapreguntas) {
+		Juego.listapreguntas = listapreguntas;
+	}
+
+	
+	public static void iniciarJugadores() {
+
+		Jugador player1 = new Jugador ("Domingo",25,0);
+		listajugadores.add(player1);
+		Jugador player2 = new Jugador ("Roberto",23,0);
+		listajugadores.add(player2);
+		Jugador player3 = new Jugador ("Natalia",29,5);
+		listajugadores.add(player3);
+		
+	}
+	
+	public static void iniciarPreguntas() {
+		
+		Pregunta pregunta1 = new Pregunta (01,"Cual es la capital de Spain?","Madrid","Barcelona","Murcia",true,false,false);
+		listapreguntas.add(pregunta1);
+		Pregunta pregunta2 = new Pregunta (02,"Cual es mi color favorito?","Amarillo","Rojo","Azul",true,false,false);
+		listapreguntas.add(pregunta2);
+		Pregunta pregunta3 = new Pregunta (03,"Cual es una verdura Murciana","Platano","Limon","Mango",false,true,false);
+		listapreguntas.add(pregunta3);
+		Pregunta pregunta4 = new Pregunta (04,"Cual es la capital de Francia?","Madrid","Paris","Milan",false,true,false);
+		listapreguntas.add(pregunta4);
+		Pregunta pregunta5 = new Pregunta (05,"Cual es el animal terrestre mas grande del mundo?","Ballena AZUL","Elefante","Nutria",true,false,false);
+		listapreguntas.add(pregunta5);
+		Pregunta pregunta6 = new Pregunta (06,"Cual es el oceano mas grande del mundo?","Mediterraneo","Mar muerto","Pacifico",false,false,true);
+		listapreguntas.add(pregunta6);
+		Pregunta pregunta7 = new Pregunta (07,"Quien pinto la Mona Lisa ?","Leonardo da Vinci","El Cuqui de LQSA","Torrente",true,false,false);
+		listapreguntas.add(pregunta7);
+		/**
+		 * Con la pregunta 08 y 09 me sale error en el id, solo les puedo poner "8" y "9"
+		 */
+		Pregunta pregunta8 = new Pregunta (8,"Cual es la capital de Italia?","Madrid","Roma","Paris",false,true,false);
+		listapreguntas.add(pregunta8);
+		Pregunta pregunta9 = new Pregunta (9,"De que color es el caballo blanco de santiago","Añil","Nose","Blanco",false,false,true);
+		listapreguntas.add(pregunta9);
+		Pregunta pregunta10 = new Pregunta (10,"Cual es el metal mas abundante de la corteza terrestre ?","Diamante","Oro","Hierro",false,false,true);
+		listapreguntas.add(pregunta10);
+		
+	}
+	
+	public static Jugador seleccionarJugador() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Selecciona que jugador eres:");
+		int i=1;
+		for (Jugador jugador : listajugadores) {
+			System.out.println(i+".- "+jugador.getNombre());
+			i++;
+		}
+		int seleccion_Jugador = sc.nextInt();
+		
+		Jugador jugadorSeleccionado = new Jugador(null);
+		
+		jugadorSeleccionado = listajugadores.get(seleccion_Jugador-1);
+		//El -1 se utiliza para que coja la opcion correcta,  ya que
+		//para la comprension del usuario sumamos +1 en el menu.
+		
+		return jugadorSeleccionado;
+	}
+
+	public static void jugar(Jugador jugador_seleccionado) {
+		
+		System.out.println("Estas jugando como "+jugador_seleccionado.getNombre());
+		
+	}
+	
+}

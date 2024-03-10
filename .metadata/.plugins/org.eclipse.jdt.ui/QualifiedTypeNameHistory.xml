@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.awt.print.Printable"/>
+    <fullyQualifiedTypeName name="javax.swing.event.SwingPropertyChangeSupport"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="unidad5.ejemplos.e1.Cuenta"/>
+    <fullyQualifiedTypeName name="unidad5.tareas.tarea4.Pelicula"/>
+    <fullyQualifiedTypeName name="unidad5.tareas.tarea6.Musico"/>
+    <fullyQualifiedTypeName name="unidad6.tareas.tarea1.Puesto"/>
+    <fullyQualifiedTypeName name="unidad6.tareas.tarea1.Persona"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="unidad6.practica.quiz.Jugador"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="unidad6.practica.quiz.Juego"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
+</qualifiedTypeNameHistroy>
